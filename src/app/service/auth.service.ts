@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -22,4 +23,16 @@ export class AuthService {
   {
     return this.http.post<User>('http://localhost:8080/user/cadastrar', user)
   }
+
+  logado()
+  {
+    let ok: boolean = false
+
+    if(environment.token != '')
+    {
+      ok = true
+    }
+    return ok
+  }
+  
 }
