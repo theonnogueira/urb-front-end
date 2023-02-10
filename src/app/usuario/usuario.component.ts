@@ -23,20 +23,31 @@ export class UsuarioComponent implements OnInit {
   ngOnInit() {
     if(environment.token == '')
     {
-      //alert('Usuário deslogado, faça o login novamente')
+      alert('Usuário deslogado, faça o login novamente')
       this.router.navigate(['/entrar'])
     }
-    
+
+    this.findAllUsuarios()
+
+  }
+
+  findAllUsuarios()
+  {
+    this.usuarioService.getAllUsuario().subscribe((resposta: Usuario[]) =>{
+      this.listaUsuarios = resposta
+    })
   }
 
   cadastrar()
   {
     this.usuarioService.postUsuario(this.usuario).subscribe((resposta: Usuario) =>{
+
       this.usuario = resposta
-      console.log('resposta', resposta)
-      //alert('Usuário cadastrado com sucesso!')
+      console.log(resposta)
+      alert('Usuário cadastrado com sucesso!')
       this.usuario = new Usuario()
-    }) 
+
+    })
   }
 
 }

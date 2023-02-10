@@ -23,8 +23,8 @@ export class UsuarioService {
     return this.http.get<Usuario[]>('http://localhost:8080/usuarios', this.token)
   }
 
-  postUsuario(usuario: Usuario): Observable<Usuario>
+  postUsuario(usuario: Usuario)
   {
-    return this.http.post<Usuario>('http://localhost:8080/usuarios', usuario, this.token)
+    return this.http.post<Usuario>('http://localhost:8080/usuarios', usuario)
   }
 }
