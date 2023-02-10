@@ -1,0 +1,74 @@
+<div class="container-fluid">
+  <div class="row bg-light d-flex align-items-center">
+    <div class="col-md-6">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6 text-success text-center">
+          <h1 class="fs-30" style="font-family: 'Times New Roman', Times, serif;" >Seja bem vindo usuário</h1>
+          <hr>
+          <h5 class="fs-18" style="font-family: 'Times New Roman', Times, serif;">Urbana transportes</h5>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center mt-3">
+       
+        <div class="col-md-6 text-center">
+        
+          
+          <a href="#cartoes" class="btn btn-outline-success">Novo cartão</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 d-flex justify-content-center">
+      <img src="../../assets/cartoes-vem-recife-removebg-preview.png"
+      alt="Imagem de fundo"
+      width="400px"
+      height="345px"/>
+    </div>
+  </div>
+</div>
+
+<hr>
+<hr>
+
+<h2 class="text-center">Para cadastrar um cartão, preencha os campos abaixo:</h2>
+
+<div id="cartoes">
+  
+
+  <form action="/action_page.php">
+    <label for="fname">Número do cartão</label>
+    <input
+      type="text"
+      id="fnumber"
+      name="numerocartao"
+      placeholder="Digite aqui"
+    />
+
+    <label for="lname">Seu nome</label>
+    <input type="text" id="lname" name="seunome" placeholder="Digite aqui" />
+
+    <label for="country">Status do cartão</label>
+    <select id="status" name="status">
+      <option selected>Escolher</option>
+      <option value="ativo">Ativo</option>
+      <option value="inativo">Inativo</option>
+    </select>
+
+    <label for="country">Tipo do cartão</label>
+    <select id="tipo" name="tipo">
+      <option selected>Escolher</option>
+      <option value="comum">Comum</option>
+      <option value="estudante">Estudante</option>
+      <option value="trabalhador">Trabalhador</option>
+    </select>
+
+    <div class="form-group">
+      <label for="usuario">Escolha um usuário ou <a href="#">Cadastre um novo</a>:</label>
+      <select name="usuario" id="usuario" class="form-control">
+        <option value="">Usuário</option>
+      </select>
+    </div>
+    <input type="submit" value="Submit" />
+  </form>
+
+  
+</div>
