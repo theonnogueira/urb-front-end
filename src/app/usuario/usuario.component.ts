@@ -1,6 +1,8 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
+import { Usuario } from '../model/Usuario';
+import { UsuarioService } from '../service/usuario.service';
 
 @Component({
   selector: 'app-usuario',
@@ -9,8 +11,13 @@ import { environment } from 'src/environments/environment.development';
 })
 export class UsuarioComponent implements OnInit {
 
+
+  usuario: Usuario = new Usuario()
+  listaUsuarios: Usuario[]
+
   constructor(
-    private router: Router
+    private router: Router,
+    private usuarioService: UsuarioService
   ){}
 
   ngOnInit() {
@@ -20,6 +27,16 @@ export class UsuarioComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
     
+  }
+
+  cadastrar()
+  {
+    this.usuarioService.postUsuario(this.usuario).subscribe((resposta: Usuario) =>{
+      this.usuario = resposta
+      console.log('resposta', resposta)
+      //alert('Usuário cadastrado com sucesso!')
+      this.usuario = new Usuario()
+    }) 
   }
 
 }
