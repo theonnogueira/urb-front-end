@@ -41,7 +41,6 @@ export class UsuarioComponent implements OnInit {
   cadastrar()
   {
     this.usuarioService.postUsuario(this.usuario).subscribe((resposta: Usuario) =>{
-
       this.usuario = resposta
       console.log(resposta)
       alert('Usuário cadastrado com sucesso!')

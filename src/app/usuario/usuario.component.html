@@ -50,8 +50,8 @@
             <th>{{usuario.id}}</th>
             <td>{{usuario.apelido}}</td>
             <td class="d-flex justify-content-end">
-              <button class="btn btn-info m-1">Editar</button>
-              <button class="btn btn-danger m-1">Apagar</button>
+              <button class="btn btn-info m-1" [routerLink]="['/usuario-edit', usuario.id]">Editar</button>
+              <button class="btn btn-danger m-1" [routerLink]="['/usuario-delete', usuario.id]">Apagar</button>
             </td>
 
           </tr>
