@@ -4,7 +4,7 @@ import { Usuario } from "./Usuario"
 export class Cartao
 {
   public id: number
-  public numeroCartao: number
+  public numeroCartao: string
   public nm: string
   public status: string
   public tipoCartao: string

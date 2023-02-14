@@ -13,10 +13,10 @@ export class UsuarioService {
     private http: HttpClient
   ) { }
 
-  token =
-  {
-    headers: new HttpHeaders().set('Authorization', environment.token)
-  }
+ //token =
+ //{
+//   headers: new HttpHeaders().set('Authorization', environment.token)
+ //}
 
   getAllUsuario(): Observable<Usuario[]>
   {
@@ -40,6 +40,6 @@ export class UsuarioService {
 
   deleteUsuario(id: number)
   {
-    return this.http.delete(`http://localhost:8080/usuarios/${id}`, this.token)
+    return this.http.delete(`http://localhost:8080/usuarios/${id}`)
   }
 }

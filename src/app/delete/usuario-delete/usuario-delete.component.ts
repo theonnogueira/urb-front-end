@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment.development';
 export class UsuarioDeleteComponent implements OnInit {
 
   usuario: Usuario = new Usuario()
-  idUsuario: number
+  id: number
 
   constructor(
     private usuarioService: UsuarioService,
@@ -28,8 +28,8 @@ export class UsuarioDeleteComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
 
-    this.idUsuario = this.route.snapshot.params['id']
-    this.findByIdUsuario(this.idUsuario)
+    this.id = this.route.snapshot.params['id']
+    this.findByIdUsuario(this.id)
   }
   findByIdUsuario(id: number)
   {
@@ -39,7 +39,7 @@ export class UsuarioDeleteComponent implements OnInit {
   }
   apagar()
   {
-    this.usuarioService.deleteUsuario(this.idUsuario).subscribe(() =>{
+    this.usuarioService.deleteUsuario(this.id).subscribe(() =>{
       alert('Usuário apagado com sucesso!')
       this.router.navigate(['/usuario'])
     })

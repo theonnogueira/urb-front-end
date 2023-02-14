@@ -45,7 +45,7 @@ export class UsuarioEditComponent implements OnInit{
         this.usuario = resposta
         console.log(resposta)
         alert('Usuário atualizado com sucesso!')
-        this.usuario = new Usuario()
+        this.usuario = new Usuario
         this.router.navigate(['/usuario'])
       })
     }

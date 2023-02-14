@@ -9,10 +9,10 @@
         </div>
       </div>
       <div class="row d-flex justify-content-center mt-3">
-       
+
         <div class="col-md-6 text-center">
-        
-          
+
+
           <a href="#cartoes" class="btn btn-outline-success">Novo cartão</a>
         </div>
       </div>
@@ -32,29 +32,31 @@
 <h2 class="text-center">Para cadastrar um cartão, preencha os campos abaixo:</h2>
 
 <div id="cartoes">
-  
+
 
   <form action="/action_page.php">
     <label for="fname">Número do cartão</label>
-    <input
+    <input [(ngModel)]="cartao.numeroCartao"
       type="text"
       id="fnumber"
       name="numerocartao"
       placeholder="Digite aqui"
     />
 
-    <label for="lname">Seu nome</label>
-    <input type="text" id="lname" name="seunome" placeholder="Digite aqui" />
+     <label
 
-    <label for="country">Status do cartão</label>
-    <select id="status" name="status">
+    for="country">Status do cartão</label>
+    <select  [(ngModel)]="cartao.status"
+     id="status" name="status">
       <option selected>Escolher</option>
       <option value="ativo">Ativo</option>
       <option value="inativo">Inativo</option>
     </select>
 
+
     <label for="country">Tipo do cartão</label>
-    <select id="tipo" name="tipo">
+    <select [(ngModel)]="cartao.tipoCartao"
+     id="tipo" name="tipo">
       <option selected>Escolher</option>
       <option value="comum">Comum</option>
       <option value="estudante">Estudante</option>
@@ -63,12 +65,13 @@
 
     <div class="form-group">
       <label for="usuario">Escolha um usuário ou <a routerLink="/usuario">Cadastre um novo</a>:</label>
-      <select name="usuario" id="usuario" class="form-control">
-        <option value="">Usuário</option>
+      <select name="usuario" id="usuario" class="form-control" [(ngModel)]='idUsuario' (change)='findByIdUsuario()'>
+        <option *ngFor='let item of listaUsuarios' value="{{item.id}}">
+              {{item.apelido}}</option>
       </select>
     </div>
-    <input type="submit" value="Submit" />
+    <button type="button" class="btn btn-success" (click)="publicar()">Submeter</button>
   </form>
 
-  
+
 </div>
