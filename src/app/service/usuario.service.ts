@@ -13,18 +13,33 @@ export class UsuarioService {
     private http: HttpClient
   ) { }
 
-  token = 
-  {
-    headers: new HttpHeaders().set('Authorization', environment.token)
-  }
+ //token =
+ //{
+//   headers: new HttpHeaders().set('Authorization', environment.token)
+ //}
 
   getAllUsuario(): Observable<Usuario[]>
   {
-    return this.http.get<Usuario[]>('http://localhost:8080/usuarios', this.token)
+    return this.http.get<Usuario[]>('http://localhost:8080/usuarios')
   }
 
-  postUsuario(usuario: Usuario): Observable<Usuario>
+  getByIdUsuario(id: number): Observable<Usuario>
   {
-    return this.http.post<Usuario>('http://localhost:8080/usuarios', usuario, this.token)
+    return this.http.get<Usuario>(`http://localhost:8080/usuarios/${id}`)
+  }
+
+  postUsuario(usuario: Usuario)
+  {
+    return this.http.post<Usuario>('http://localhost:8080/usuarios', usuario)
+  }
+
+  putUsuario(usuario: Usuario)
+  {
+    return this.http.put<Usuario>('http://localhost:8080/usuarios',usuario)
+  }
+
+  deleteUsuario(id: number)
+  {
+    return this.http.delete(`http://localhost:8080/usuarios/${id}`)
   }
 }

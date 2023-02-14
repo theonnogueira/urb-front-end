@@ -14,6 +14,8 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
+import { UsuarioDeleteComponent } from './delete/usuario-delete/usuario-delete.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { UsuarioComponent } from './usuario/usuario.component';
     EntrarComponent,
     CadastrarComponent,
     InicioComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    UsuarioEditComponent,
+    UsuarioDeleteComponent
   ],
   imports: [
     BrowserModule,
